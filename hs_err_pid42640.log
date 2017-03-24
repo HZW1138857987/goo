@@ -1,0 +1,186 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d800afb, pid=42640, tid=53632
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_22-b03 mixed mode)
+# Problematic frame:
+# V  [jvm.dll+0xc0afb]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0210e6f8):  VMThread [id=53632]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x0210b230, EDX=0x021763f8
+ESP=0x01d8fdd8, EBP=0x01d8fe34, ESI=0x0c63fad8, EDI=0x0210e6f8
+EIP=0x6d800afb, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x01d8fdd8)
+0x01d8fdd8:   00000000 0c63fad8 0c294598 0c2c92a0
+0x01d8fde8:   00000001 0210e6f8 0210b230 021763e8
+0x01d8fdf8:   021763f4 021767dc 01d8fee0 02175ff0
+0x01d8fe08:   02140618 02175fe8 02175ff0 021763dc
+0x01d8fe18:   0c2c9330 0c294598 0c2945b0 01d8fe6c
+0x01d8fe28:   08183eb8 08183798 00000000 01d8fe6c
+0x01d8fe38:   6d800bec 6d814b2b 6d800c9a 0209e618
+0x01d8fe48:   0c63fa94 6d800c25 0c63fad8 6d86b324 
+
+Instructions: (pc=0x6d800afb)
+0x6d800aeb:   ff 85 c0 0f 84 d8 00 00 00 53 8b 40 04 89 45 fc
+0x6d800afb:   8b 18 4b 0f 88 b7 00 00 00 eb 03 8b 45 fc 8b 40 
+
+
+Stack: [0x01d50000,0x01d90000),  sp=0x01d8fdd8,  free space=255k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xc0afb]
+V  [jvm.dll+0xc0bec]
+V  [jvm.dll+0x12adf2]
+V  [jvm.dll+0x12af9b]
+V  [jvm.dll+0x12ad00]
+C  [msvcrt.dll+0x11287]
+C  [msvcrt.dll+0x11328]
+C  [kernel32.dll+0x133aa]
+C  [ntdll.dll+0x39ef2]
+C  [ntdll.dll+0x39ec5]
+
+VM_Operation (0x0c63fa94): change breakpoints, mode: safepoint, requested by thread 0x0c296f40
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0209e648 JavaThread "DestroyJavaVM" [_thread_blocked, id=30456]
+  0x0c2aa658 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=53380]
+  0x0c2a20c8 JavaThread "CompilerThread0" daemon [_thread_blocked, id=52996]
+  0x0c2a1120 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=26756]
+  0x0c298ff8 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=53672]
+  0x0c2978d8 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=53504]
+  0x0c296f40 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=53976]
+  0x0217c308 JavaThread "Finalizer" daemon [_thread_blocked, id=53952]
+  0x0217a508 JavaThread "Reference Handler" daemon [_thread_blocked, id=53832]
+
+Other Threads:
+=>0x0210e6f8 VMThread [id=53632]
+  0x0c2a1c18 WatcherThread [id=53700]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0209e5e8/0x00000140] Threads_lock - owner thread: 0x0210e6f8
+
+Heap
+ def new generation   total 576K, used 334K [0x04180000, 0x04220000, 0x04660000)
+  eden space 512K,  65% used [0x04180000, 0x041d3b70, 0x04200000)
+  from space 64K,   0% used [0x04200000, 0x04200000, 0x04210000)
+  to   space 64K,   0% used [0x04210000, 0x04210000, 0x04220000)
+ tenured generation   total 1408K, used 0K [0x04660000, 0x047c0000, 0x08180000)
+   the space 1408K,   0% used [0x04660000, 0x04660000, 0x04660200, 0x047c0000)
+ compacting perm gen  total 8192K, used 1788K [0x08180000, 0x08980000, 0x0c180000)
+   the space 8192K,  21% used [0x08180000, 0x0833f3a0, 0x0833f400, 0x08980000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Program Files (x86)\Java\jdk1.5.0_22\bin\javaw.exe
+0x77b60000 - 0x77ce0000 	C:\Windows\SysWOW64\ntdll.dll
+0x77600000 - 0x77710000 	C:\Windows\syswow64\kernel32.dll
+0x769d0000 - 0x76a17000 	C:\Windows\syswow64\KERNELBASE.dll
+0x770d0000 - 0x77170000 	C:\Windows\syswow64\ADVAPI32.dll
+0x772d0000 - 0x7737c000 	C:\Windows\syswow64\msvcrt.dll
+0x770b0000 - 0x770c9000 	C:\Windows\SysWOW64\sechost.dll
+0x77170000 - 0x77260000 	C:\Windows\syswow64\RPCRT4.dll
+0x755c0000 - 0x75620000 	C:\Windows\syswow64\SspiCli.dll
+0x755b0000 - 0x755bc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x76840000 - 0x76940000 	C:\Windows\syswow64\USER32.dll
+0x77530000 - 0x775c0000 	C:\Windows\syswow64\GDI32.dll
+0x767f0000 - 0x767fa000 	C:\Windows\syswow64\LPK.dll
+0x76a20000 - 0x76abd000 	C:\Windows\syswow64\USP10.dll
+0x77260000 - 0x772c0000 	C:\Windows\system32\IMM32.DLL
+0x76720000 - 0x767ec000 	C:\Windows\syswow64\MSCTF.dll
+0x72890000 - 0x728c8000 	C:\Windows\SysWOW64\nvinit.dll
+0x0f000000 - 0x0f006000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\_etoured.dll
+0x70d50000 - 0x70d8d000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\nvd3d9wrap.dll
+0x76f10000 - 0x770ad000 	C:\Windows\syswow64\SETUPAPI.dll
+0x775d0000 - 0x775f7000 	C:\Windows\syswow64\CFGMGR32.dll
+0x76940000 - 0x769cf000 	C:\Windows\syswow64\OLEAUT32.dll
+0x765b0000 - 0x7670c000 	C:\Windows\syswow64\ole32.dll
+0x774b0000 - 0x774c2000 	C:\Windows\syswow64\DEVOBJ.dll
+0x70d10000 - 0x70d3f000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\nvdxgiwrap.dll
+0x6d740000 - 0x6d8de000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\client\jvm.dll
+0x75000000 - 0x75032000 	C:\Windows\system32\WINMM.dll
+0x70f30000 - 0x70f7c000 	C:\Windows\system32\apphelp.dll
+0x6d300000 - 0x6d308000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\hpi.dll
+0x76560000 - 0x76565000 	C:\Windows\syswow64\PSAPI.DLL
+0x6d400000 - 0x6d435000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\jdwp.dll
+0x6d710000 - 0x6d71c000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\verify.dll
+0x6d380000 - 0x6d39d000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\java.dll
+0x6d730000 - 0x6d73f000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\zip.dll
+0x6d290000 - 0x6d297000 	C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin\dt_socket.dll
+0x76b50000 - 0x76b85000 	C:\Windows\syswow64\WS2_32.dll
+0x775c0000 - 0x775c6000 	C:\Windows\syswow64\NSI.dll
+0x10000000 - 0x10165000 	C:\Program Files (x86)\Sangfor\SSL\ClientComponent\SangforNsp.dll
+0x72020000 - 0x7213c000 	C:\Windows\system32\MFC42.DLL
+0x71f90000 - 0x7201c000 	C:\Windows\system32\ODBC32.dll
+0x75910000 - 0x7655a000 	C:\Windows\syswow64\SHELL32.dll
+0x76e10000 - 0x76e67000 	C:\Windows\syswow64\SHLWAPI.dll
+0x77390000 - 0x774af000 	C:\Windows\syswow64\urlmon.dll
+0x77380000 - 0x77384000 	C:\Windows\syswow64\api-ms-win-downlevel-ole32-l1-1-0.dll
+0x75900000 - 0x75904000 	C:\Windows\syswow64\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+0x76710000 - 0x76715000 	C:\Windows\syswow64\api-ms-win-downlevel-advapi32-l1-1-0.dll
+0x772c0000 - 0x772c4000 	C:\Windows\syswow64\api-ms-win-downlevel-user32-l1-1-0.dll
+0x76830000 - 0x76834000 	C:\Windows\syswow64\api-ms-win-downlevel-version-l1-1-0.dll
+0x750b0000 - 0x750b9000 	C:\Windows\system32\version.DLL
+0x765a0000 - 0x765a3000 	C:\Windows\syswow64\api-ms-win-downlevel-normaliz-l1-1-0.dll
+0x77b30000 - 0x77b33000 	C:\Windows\syswow64\normaliz.DLL
+0x76c10000 - 0x76e08000 	C:\Windows\syswow64\iertutil.dll
+0x75620000 - 0x757d7000 	C:\Windows\syswow64\WININET.dll
+0x71ec0000 - 0x71f26000 	C:\Windows\system32\MSVCP60.dll
+0x75050000 - 0x7506c000 	C:\Windows\system32\iphlpapi.dll
+0x75040000 - 0x75047000 	C:\Windows\system32\WINNSI.DLL
+0x71dd0000 - 0x71e08000 	C:\Windows\system32\odbcint.dll
+0x76e80000 - 0x76f03000 	C:\Windows\syswow64\CLBCatQ.DLL
+0x70ec0000 - 0x70ed0000 	C:\Windows\system32\NLAapi.dll
+0x70eb0000 - 0x70ec0000 	C:\Windows\system32\napinsp.dll
+0x70e90000 - 0x70ea2000 	C:\Windows\system32\pnrpnsp.dll
+0x71d90000 - 0x71dcc000 	C:\Windows\System32\mswsock.dll
+0x71140000 - 0x71184000 	C:\Windows\system32\DNSAPI.dll
+0x70e80000 - 0x70e88000 	C:\Windows\System32\winrnr.dll
+0x70e70000 - 0x70e7d000 	C:\Windows\system32\wshbth.dll
+0x71110000 - 0x71131000 	C:\Program Files (x86)\Bonjour\mdnsNSP.dll
+0x710d0000 - 0x71108000 	C:\Windows\System32\fwpuclnt.dll
+0x711a0000 - 0x711a6000 	C:\Windows\system32\rasadhlp.dll
+0x0cc30000 - 0x0cf2b000 	C:\Program Files (x86)\Sangfor\SSL\ClientComponent\SangforTcp.dll
+0x76800000 - 0x7682d000 	C:\Windows\syswow64\WINTRUST.dll
+0x757e0000 - 0x758fe000 	C:\Windows\syswow64\CRYPT32.dll
+0x76e70000 - 0x76e7c000 	C:\Windows\syswow64\MSASN1.dll
+0x71d80000 - 0x71d85000 	C:\Windows\System32\wshtcpip.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:55882 -Dfile.encoding=UTF-8 -Xbootclasspath/a:D:\DevelopmentSoft\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\javaee.jar;D:\DevelopmentSoft\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jsf-impl.jar;D:\DevelopmentSoft\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jsf-api.jar;D:\DevelopmentSoft\Genuitec\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jstl-1.2.jar
+java_command: com.goo.test.SynTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Java\jdk1.5.0_22\jre\bin;D:/DevelopmentSoft/Genuitec/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/DevelopmentSoft/Genuitec/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\oracle\product\10.2.0\db_1\bin;C:\Program Files\AuthenTec TrueSuite\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Sony\VAIO Improvement\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;
+USERNAME=olivia
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (cores per cpu 8, threads per core 2) family 6 model 10 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, ht
+
+Memory: 4k page, physical 4194303k(3919112k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_22-b03) for windows-x86, built on Oct  9 2009 01:15:45 by "java_re" with MS VC++ 6.0
+
+time: Thu Apr 11 15:29:40 2013
+elapsed time: 219 seconds
+

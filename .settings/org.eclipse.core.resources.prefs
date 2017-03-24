@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebContent/login.jsp=UTF-8
+encoding//WebContent/product/apparel.jsp=UTF-8
+encoding//WebContent/product/checkout.jsp=UTF-8
+encoding//WebContent/product/contact.jsp=UTF-8
+encoding//WebContent/product/register.jsp=UTF-8
+encoding//WebContent/product/single.jsp=UTF-8
+encoding//src/com/goo/comtools/action/BaseAction.java=UTF-8
